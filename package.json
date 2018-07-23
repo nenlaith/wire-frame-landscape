@@ -1,0 +1,22 @@
+{
+  "name": "wire-frame-landscape",
+  "version": "1.0.0",
+  "description": "a visual effect using html5 canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nenlaith/wire-frame-landscape.git"
+  },
+  "author": "elliott muenier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nenlaith/wire-frame-landscape/issues"
+  },
+  "homepage": "https://github.com/nenlaith/wire-frame-landscape#readme",
+  "dependencies": {
+    "mathjs": "^5.0.4"
+  }
+}
