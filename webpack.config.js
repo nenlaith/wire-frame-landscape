@@ -5,6 +5,13 @@ module.exports = {
   mode: 'development',
   output: {
   	filename: 'index.js',
+    library: {
+      root: 'WFL',
+      amd: 'wire-frame-landscape',
+      commonjs: 'wire-frame-landscape'
+    },
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
   	path: path.resolve(__dirname, 'dist')
   },
   module: {

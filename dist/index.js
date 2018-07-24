@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("wire-frame-landscape", [], factory);
+	else if(typeof exports === 'object')
+		exports["wire-frame-landscape"] = factory();
+	else
+		root["WFL"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -65194,7 +65204,7 @@ exports.default = WireFrameLandscapeError;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.wflMagnitude = exports.wflAnimation = exports.WFL = undefined;
+exports.Magnitude = exports.Animation = exports.create = undefined;
 
 var _wireFrameLandscape = __webpack_require__(/*! ./wire-frame-landscape.js */ "./src/wire-frame-landscape.js");
 
@@ -65202,31 +65212,25 @@ var _wireFrameLandscape2 = _interopRequireDefault(_wireFrameLandscape);
 
 var _animationFunctions = __webpack_require__(/*! ./animation-functions.js */ "./src/animation-functions.js");
 
-var wflAnimation = _interopRequireWildcard(_animationFunctions);
+var Animation = _interopRequireWildcard(_animationFunctions);
 
-var wflMagnitude = _interopRequireWildcard(_animationFunctions);
+var _magnitudeFunctions = __webpack_require__(/*! ./magnitude-functions.js */ "./src/magnitude-functions.js");
+
+var Magnitude = _interopRequireWildcard(_magnitudeFunctions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { startupEnum, randomSawtoothWave } from './magnitude-functions.js';
-// import math from 'mathjs';
+var create = function create(wrapper) {
+  var framerate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 42;
 
-// let wfl = new WFL("canvas-wrapper", 42);
-// wfl.setSplittings(13, 13)
-//   .setColors("white", "blue")
-//   .setLineWidth(5)
-//   .setRotation(math.pi / 7, - math.pi / 7, math.pi / 7.0)
-//   .setDimensionsType("FILL", { x: 1, y: 1, multiplier: 2 })
-//   .setAmplitudeFunction(randomSawtoothWave(-30, 30, 0.02))
-//   .addAnimation(linearSingleRotation("yaw", - math.pi / 4.0, math.pi / 4.0, math.pi / 2.0 / 50000))
-//   .addAnimation(linearSingleRotation("roll", 0, math.pi / 10.0, math.pi / 10.0 / 10000))
-//   .start();
+  return new _wireFrameLandscape2.default(wrapper, framerate);
+};
 
-exports.WFL = _wireFrameLandscape2.default;
-exports.wflAnimation = wflAnimation;
-exports.wflMagnitude = wflMagnitude;
+exports.create = create;
+exports.Animation = Animation;
+exports.Magnitude = Magnitude;
 
 /***/ }),
 
@@ -66082,6 +66086,7 @@ var WireFrameLandscape = function () {
     this.wrapper.appendChild(this.canvas);
     // this.canvas.style.height = "100%";
     // this.canvas.style.width = "100%";
+    this.wrapper.style.overflow = "hidden";
     this.context = this.canvas.getContext("2d");
     this.setColors("white", "blue");
     this.setLineWidth(5);
@@ -66401,4 +66406,5 @@ exports.default = WireFrameLandscape;
 /***/ })
 
 /******/ });
+});
 //# sourceMappingURL=index.js.map

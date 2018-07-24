@@ -29,6 +29,7 @@ class WireFrameLandscape {
     this.wrapper.appendChild(this.canvas);
     // this.canvas.style.height = "100%";
     // this.canvas.style.width = "100%";
+    this.wrapper.style.overflow = "hidden";
     this.context = this.canvas.getContext("2d");
     this.setColors("white", "blue");
     this.setLineWidth(5);
