@@ -1,6 +1,6 @@
 class WireFrameLandscapeError extends Error {
   constructor(message = "") {
-    super("WireFrameLandscape Error : " + message);
+    super("[WireFrameLandscape] " + message);
   }
 }
 

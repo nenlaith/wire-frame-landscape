@@ -15,7 +15,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['env', "stage-0", "es2015"],
+            plugins: ['transform-runtime']
           }
         }
       }
@@ -26,5 +27,6 @@ module.exports = {
     aggregateTimeout: 300,
     poll: 1000,
     ignored: /node_modules/
-  }
+  },
+  devtool: 'source-map'
 };

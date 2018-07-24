@@ -6,6 +6,18 @@ class Rotation {
     this.pitch = pitch;
     this.yaw = yaw;
 
+    this.createMatrix();
+  }
+
+  add(roll, pitch, yaw) {
+    this.roll += roll;
+    this.pitch += pitch;
+    this.yaw += yaw;
+
+    this.createMatrix();
+  }
+
+  createMatrix() {
     this.rollMatrix = Rotation.createRollMatrix(this.roll);
     this.pitchMatrix = Rotation.createPitchMatrix(this.pitch);
     this.yawMatrix = Rotation.createYawMatrix(this.yaw);
