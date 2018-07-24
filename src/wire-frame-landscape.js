@@ -27,8 +27,6 @@ class WireFrameLandscape {
     this.framerate = framerate;
     this.canvas = document.createElement("CANVAS");
     this.wrapper.appendChild(this.canvas);
-    // this.canvas.style.height = "100%";
-    // this.canvas.style.width = "100%";
     this.wrapper.style.overflow = "hidden";
     this.context = this.canvas.getContext("2d");
     this.setColors("white", "blue");
@@ -188,7 +186,6 @@ class WireFrameLandscape {
         x : this.dimensions.x * alpha,
         y: this.dimensions.y * alpha,
       });
-      // this.setDimensions(this.dimensions.x * alpha, this.dimensions.y * alpha);
     } else {
       this.dimensions = {
         x: columns,
@@ -242,14 +239,12 @@ class WireFrameLandscape {
   }
 
   setBackgroundColor(color) {
-    // this.context.fillStyle = color;
     this.backgroundColor = color;
     this.changed = 1;
     return this;
   }
 
   setWireColor(color) {
-    // this.context.strokeStyle = color;
     this.wireColor = color;
     this.changed = 1;
     return this;
@@ -263,7 +258,6 @@ class WireFrameLandscape {
   }
 
   setLineWidth(width) {
-    // this.context.lineWidth = width;
     this.lineWidth = width;
     this.changed = 1;
     return this;
@@ -274,10 +268,8 @@ class WireFrameLandscape {
     this.forEachPoint(function(point, x, y) {
       point.setRawPosition($this.getRawPosition(x, y));
     });
-    // console.log("BLOB\n\nBLOB");
     this.forEachPoint(function(point) {
       point.calculateAbsolutePosition($this.rotation, $this.positionMatrix);
-      // console.log(point.absolutePositionObject);
     });
   }
 

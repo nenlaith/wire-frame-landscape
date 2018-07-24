@@ -19,7 +19,6 @@ export const linearSingleRotation = function (type, from, to, speed = 0.02) {
     }
     current = deltaTime * speed * direction;
     acc += current;
-    // console.log(" direction " + direction + " acc " + acc + " min " + min + " max " + max);
     wfl.addRotation(
       type === "roll" ? current : 0,
       type === "pitch" ? current : 0,
