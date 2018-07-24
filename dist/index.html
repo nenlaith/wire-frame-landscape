@@ -25,9 +25,7 @@
   <div id="canvas-wrapper"></div>
   <script type="text/javascript" src="./index.js"></script>
   <script type="text/javascript">
-  setTimeout(function () {
-    // console.log(WFL);
-    let wfl = new WFL.create("canvas-wrapper", 42);
+    let wfl = WFL.create("canvas-wrapper", 42);
     wfl.setSplittings(17, 17)
       .setColors("white", "blue")
       .setLineWidth(5)
@@ -37,7 +35,6 @@
       .addAnimation(WFL.Animation.linearSingleRotation("yaw", - Math.PI / 4.0, Math.PI / 4.0, Math.PI / 2.0 / 50000))
       .addAnimation(WFL.Animation.linearSingleRotation("roll", 0, Math.PI / 10.0, Math.PI / 10.0 / 10000))
       .start();
-  }, 100)
   </script>
 </body>
 </html>
