@@ -65120,10 +65120,8 @@ var linearSingleRotation = exports.linearSingleRotation = function linearSingleR
   return function (wfl, deltaTime) {
     if (direction > 0 && acc >= max) {
       direction = -1;
-      acc = max;
     } else if (direction < 0 && acc <= min) {
       direction = 1;
-      acc = min;
     }
     current = deltaTime * speed * direction;
     acc += current;
@@ -65193,21 +65191,42 @@ exports.default = WireFrameLandscapeError;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.wflMagnitude = exports.wflAnimation = exports.WFL = undefined;
+
 var _wireFrameLandscape = __webpack_require__(/*! ./wire-frame-landscape.js */ "./src/wire-frame-landscape.js");
 
 var _wireFrameLandscape2 = _interopRequireDefault(_wireFrameLandscape);
 
 var _animationFunctions = __webpack_require__(/*! ./animation-functions.js */ "./src/animation-functions.js");
 
-var _mathjs = __webpack_require__(/*! mathjs */ "./node_modules/mathjs/index.js");
+var wflAnimation = _interopRequireWildcard(_animationFunctions);
 
-var _mathjs2 = _interopRequireDefault(_mathjs);
+var wflMagnitude = _interopRequireWildcard(_animationFunctions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var wfl = new _wireFrameLandscape2.default("canvas-wrapper", 42);
+// import { startupEnum, randomSawtoothWave } from './magnitude-functions.js';
+// import math from 'mathjs';
 
-wfl.setSplittings(13, 13).setColors("white", "blue").setLineWidth(5).setRotation(_mathjs2.default.pi / 6, -_mathjs2.default.pi / 6, _mathjs2.default.pi / 6.0).setDimensionsType("FILL", { x: 1, y: 1, multiplier: 1.5 }).addAnimation((0, _animationFunctions.linearSingleRotation)("yaw", 0, _mathjs2.default.pi / 2.0, _mathjs2.default.pi / 2.0 / 50000)).addAnimation((0, _animationFunctions.linearSingleRotation)("roll", 0, _mathjs2.default.pi / 10.0, _mathjs2.default.pi / 10.0 / 10000)).start();
+// let wfl = new WFL("canvas-wrapper", 42);
+// wfl.setSplittings(13, 13)
+//   .setColors("white", "blue")
+//   .setLineWidth(5)
+//   .setRotation(math.pi / 7, - math.pi / 7, math.pi / 7.0)
+//   .setDimensionsType("FILL", { x: 1, y: 1, multiplier: 2 })
+//   .setAmplitudeFunction(randomSawtoothWave(-30, 30, 0.02))
+//   .addAnimation(linearSingleRotation("yaw", - math.pi / 4.0, math.pi / 4.0, math.pi / 2.0 / 50000))
+//   .addAnimation(linearSingleRotation("roll", 0, math.pi / 10.0, math.pi / 10.0 / 10000))
+//   .start();
+
+exports.WFL = _wireFrameLandscape2.default;
+exports.wflAnimation = wflAnimation;
+exports.wflMagnitude = wflMagnitude;
 
 /***/ }),
 

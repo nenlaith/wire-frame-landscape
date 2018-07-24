@@ -14,10 +14,8 @@ export const linearSingleRotation = function (type, from, to, speed = 0.02) {
   return function (wfl, deltaTime) {
     if (direction > 0 && acc >= max) {
       direction = -1;
-      acc = max;
     } else if (direction < 0 && acc <= min) {
       direction = 1;
-      acc = min;
     }
     current = deltaTime * speed * direction;
     acc += current;
