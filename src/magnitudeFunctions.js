@@ -1,4 +1,3 @@
-import math from "mathjs";
 import WFLErr from './error.js';
 
 export const startupEnum = {
@@ -15,7 +14,7 @@ export const randomSawtoothWave = function (
   }
 
   function new_magnitude() {
-    return math.random() * (amplitude_max - amplitude_min) + amplitude_min;
+    return Math.random() * (amplitude_max - amplitude_min) + amplitude_min;
   }
 
   return function (x, y) {
@@ -58,9 +57,9 @@ export const sawtoothWave = function (
 
     return function() {
       if (magnitude == null) {
-        magnitude = math.random() > 0.5 ? amplitude_min : amplitude_max;
+        magnitude = Math.random() > 0.5 ? amplitude_min : amplitude_max;
         if (startup == startupEnum.RANDOM) {
-          current = math.random() * (amplitude_max - amplitude_min) + amplitude_min;
+          current = Math.random() * (amplitude_max - amplitude_min) + amplitude_min;
         } else if (startup == startupEnum.ZERO){
           current = 0;
         }

@@ -1,4 +1,5 @@
-import math from "mathjs";
+import core from 'mathjs/core';
+import matrix from 'mathjs/lib/type/matrix';
 import Point from './point.js';
 import Rotation from './rotation.js';
 import WFLErr from './error.js';
@@ -6,10 +7,10 @@ import ResizeSensor from './resizeSensor.js';
 import {
   startupEnum,
   randomSawtoothWave
-} from './magnitude-functions.js';
-import {
-  linearRotation
-} from './animation-functions.js';
+} from './magnitudeFunctions.js';
+
+let math = core.create();
+math.import(matrix);
 
 class WireFrameLandscape {
 
@@ -218,7 +219,7 @@ class WireFrameLandscape {
         x = divs[divs.length / 2.0];
         y = divs[divs.length / 2.0 - 1];
       } else {
-        x = y = divs[math.ceil(divs.length / 2.0) - 1];
+        x = y = divs[Math.ceil(divs.length / 2.0) - 1];
       }
     } else {
       throw new WFLErr("first argument not a number in setSquares");

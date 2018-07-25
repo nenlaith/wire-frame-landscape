@@ -1,4 +1,19 @@
-import math from "mathjs";
+import core from 'mathjs/core';
+import bignumber from 'mathjs/lib/type/bignumber';
+import matrix from 'mathjs/lib/type/matrix';
+
+import index from "mathjs/lib/type/matrix/function/index";
+import subset from "mathjs/lib/function/matrix/subset";
+import multiply from "mathjs/lib/function/arithmetic/multiply";
+import add from "mathjs/lib/function/arithmetic/add";
+
+let math = core.create();
+math.import(matrix);
+math.import(bignumber);
+math.import(index);
+math.import(subset);
+math.import(multiply);
+math.import(add);
 
 export default class Point {
   constructor(x, y, _amplitudeFunc) {

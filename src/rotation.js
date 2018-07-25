@@ -1,4 +1,10 @@
-import math from "mathjs";
+import core from 'mathjs/core';
+import matrix from 'mathjs/lib/type/matrix';
+import multiply from "mathjs/lib/function/arithmetic/multiply";
+
+let math = core.create();
+math.import(matrix);
+math.import(multiply);
 
 class Rotation {
   constructor(roll, pitch, yaw) {
@@ -28,23 +34,23 @@ class Rotation {
   static createRollMatrix(angle) {
     return math.matrix([
       [ 1, 0, 0 ],
-      [ 0, math.cos(angle), - math.sin(angle) ],
-      [ 0, math.sin(angle), math.cos(angle) ],
+      [ 0, Math.cos(angle), - Math.sin(angle) ],
+      [ 0, Math.sin(angle), Math.cos(angle) ],
     ]);
   }
 
   static createPitchMatrix(angle) {
     return math.matrix([
-      [ math.cos(angle), 0, math.sin(angle) ],
+      [ Math.cos(angle), 0, Math.sin(angle) ],
       [ 0, 1, 0 ],
-      [ - math.sin(angle), 0, math.cos(angle) ],
+      [ - Math.sin(angle), 0, Math.cos(angle) ],
     ]);
   }
 
   static createYawMatrix(angle) {
     return math.matrix([
-      [ math.cos(angle), - math.sin(angle), 0 ],
-      [ math.sin(angle), math.cos(angle), 0 ],
+      [ Math.cos(angle), - Math.sin(angle), 0 ],
+      [ Math.sin(angle), Math.cos(angle), 0 ],
       [ 0, 0, 1 ]
     ]);
   }

@@ -1,9 +1,9 @@
-import WFL from './wire-frame-landscape.js';
-import * as Animation from './animation-functions.js';
-import * as Magnitude from './magnitude-functions.js';
+import WireFrameLandscape from './wireFrameLandscape.js';
+import * as Animation from './animationFunctions.js';
+import * as Magnitude from './magnitudeFunctions.js';
 
 const create = function (wrapper, framerate = 42) {
-  return new WFL(wrapper, framerate);
+  return new WireFrameLandscape(wrapper, framerate);
 }
 
 export {
@@ -11,3 +11,4 @@ export {
   Animation,
   Magnitude
 };
+// export default WFL;

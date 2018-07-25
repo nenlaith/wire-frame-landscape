@@ -1,5 +1,3 @@
-import math from "mathjs";
-
 export const linearSingleRotation = function (type, from, to, speed = 0.02) {
   let acc = from, current = from, direction = to >= from ? 1 : -1, min, max;
 
