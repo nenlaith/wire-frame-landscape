@@ -3,6 +3,10 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
+  entry: './src/test.js',
+  output: {
+    filename: 'test.js',
+  },
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,

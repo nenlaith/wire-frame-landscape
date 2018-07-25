@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  // entry: './src/index.js',
   output: {
-  	filename: 'index.js',
+  	// filename: 'index.js',
     library: {
       root: 'WFL',
       amd: 'wire-frame-landscape',
